@@ -4,7 +4,7 @@ import argparse
 from traceback import print_tb
 # TorCrawl Modules
 from modules.crawler import crawler
-from modules.checker import checker
+from modules.checker import *
 
 help = '''
 Umum:
@@ -28,6 +28,12 @@ def main():
 		description="AlphaCrawl.py adalah crawler berbahasa python yang dapat digunakan untuk melakukan crawling pada Darkweb.")
 
 	parser.add_argument(
+		'-u',
+		'--url',
+		help='Untuk menentukan URL awal yang akan di crawl'
+	)
+	
+	parser.add_argument(
         '-p',
         '--cpause',
         help='Untuk mengatur lama waktu pause saat crawling (Default: 0)'
@@ -36,6 +42,7 @@ def main():
 	args = parser.parse_args()
 
 	# mengubah argumen parser menjadi variabel
+
 	if args.cpause:
 		cpause = args.cpause
 
