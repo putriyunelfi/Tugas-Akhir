@@ -21,17 +21,10 @@ Crawler:
 
 def main():
 	# inisialisasi nilai default  variabel
-	cdepth = 1
 	cpause = 0
 
 	parser = argparse.ArgumentParser(
 		description="AlphaCrawl.py adalah crawler berbahasa python yang dapat digunakan untuk melakukan crawling pada Darkweb.")
-
-	parser.add_argument(
-		'-u',
-		'--url',
-		help='Untuk menentukan URL awal yang akan di crawl'
-	)
 	
 	parser.add_argument(
         '-p',
@@ -53,10 +46,7 @@ def main():
 	if len(args.url) > 0:
 		global website
 		global outpath
-		website = urlcanon(args.url)
-		outpath = folder(extract_domain(website))
-		Crawler
-		print(("\n## File hasil berada pada : " + os.getcwd() + "/" + outpath))
+		crawl()
 		print("\n\n** Proses Crawling Selesai **\n")
 
 if __name__ == "__main__":
