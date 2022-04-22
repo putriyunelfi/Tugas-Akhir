@@ -677,7 +677,7 @@ def create_log(parsed_urls, query, num_start_pages, num_crawled, page_link_limit
         counter += 1
 
 
-def main():
+def crawl():
     query, num_start_pages, n, page_link_limit, mode, relevance_threshold = get_input()
     start_time = time.time()
     start_pages = get_start_pages(query, num_start_pages)
@@ -717,4 +717,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    crawl()
